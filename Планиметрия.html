@@ -40,6 +40,57 @@
 				font-size: 30%;color: dimgray;
 			 }
 
+			 #circle {
+				width: 100px;
+				height: 100px;
+				background: red;
+				-moz-border-radius: 50px;
+				-webkit-border-radius: 50px;
+				border-radius: 50px;
+			 }
+			 #triangle-up {
+				width: 0;
+				height: 0;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				border-bottom: 100px solid red;
+			 }
+			 #square {
+				width: 100px;
+				height: 100px;
+				background: red;
+			 }
+			 #parallelogram {
+				margin-left: 20px; 
+				width: 150px; 
+				height: 100px;
+				transform: skew(20deg);
+				background:red;
+			 }
+			 #romb {
+  			    width: 100px;
+    		    height: 100px;
+   			    background:red;
+   			    -webkit-transform: rotate(-45deg);
+                -moz-transform: rotate(-45deg);
+    			-ms-transform: rotate(-45deg);
+    			-o-transform: rotate(-45deg);
+    			transform: rotate(-45deg);
+    			-webkit-transform-origin: 0 100%;
+    			-moz-transform-origin: 0 100%;
+    			-ms-transform-origin: 0 100%;
+    			-o-transform-origin: 0 100%;
+    			transform-origin: 0 100%;
+    			margin: 60px 60px 60px 60px;
+			 }
+			 #trapez {
+				border-bottom: 100px solid red;
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				height: 0;
+				width: 100px;
+				margin: 60px 100px 100px 100px;
+			 }
 
 		</style>
 	</head>
@@ -174,7 +225,7 @@
 						$S = a \cdot h,$  
 						где $a$ - сторона параллелограмма, $h$ - опущенная к ней высота.<br>
 						Площадь параллелограмма через две стороны и углу между ними:<br>
-						$ S = a \cdot b \cdot sin(\alpha)$  
+						$ S = a \cdot b \cdot \sin(\alpha)$  
 						где $a, b$ - стороны параллелограмма, $\alpha$ - угол между сторонами $a$ и $b$.
 						</script>
 					</section>
@@ -186,7 +237,7 @@
 						$S = a \cdot h,$  
 						где $a$ - сторона ромба, $h$ - опущенная к ней высота.<br>
 						Площадь ромба через сторону и угол:<br>
-						$S = a^2 \cdot sin(\alpha),$<br>
+						$S = a^2 \cdot \sin(\alpha),$<br>
 						где $a$ - сторона ромба,$\alpha$ - угол между сторонами ромба.<br>
 						Площадь ромба через диагонали:<br>
 						$S = \frac{d_1 \cdot d_2}{2}$
@@ -216,6 +267,7 @@
 								<label for = "SdCircle"> $S = \frac{d^2} {2}$</label>
 								<output type = "text" name = "SdCircle" id = "SdCircle"> </output> 
 						</form>
+						<div id="circle"></div>
 						</script>
 					</section>
 
@@ -261,7 +313,7 @@
 								<output type = "text" name = "STriangl2" id = "STriangl2"> </output><br>
 								<label for = "STriangl3">$ S = \sqrt{ p \cdot (p — a)(p — b)(p — c)} $ </label>
 								<output type = "text" name = "STriangl3" id = "STriangl3"> </output>
-
+								<div id="triangle-up"></div>
 						</script>
 					</section>
 
@@ -310,7 +362,7 @@
 								<output type = "text" name = "SCvadrat1" id = "SCvadrat1"> </output> <br>
 								<label for = "SCvadrat2"> $S = \frac{D^2} {2}$ </label>
 								<output type = "text" name = "SCvadrat2" id = "SCvadrat2"> </output> <br>
-
+								<div id="square"></div>
 						</script>
 					</section>
 
@@ -351,9 +403,9 @@
 								<output type = "text" name = "PParall" id = "PParall"> </output> <br>
 								<label for = "SParall1">$S = a \cdot h$ </label>
 								<output type = "text" name = "SParall1" id = "SParall1"> </output> <br>
-								<label for = "SParall2">$S = a \cdot b \cdot sin(\beta) $</label>
+								<label for = "SParall2">$S = a \cdot b \cdot \sin(\beta) $</label>
 								<output type = "text" name = "SParall2" id = "SParall2"> </output> <br>
-
+								<div id="parallelogram"></div>
 						</script>
 					</section>
 					<section data-markdown>
@@ -397,11 +449,11 @@
 								<output type = "text" name = "PRomb" id = "PRomb"> </output> <br>
 								<label for = "SRomb1">$S = a \cdot h$ </label>
 								<output type = "text" name = "SRomb1" id = "SRomb1"> </output> <br>
-								<label for = "SRomb2">$S = a^2 \cdot sin(\alpha)$ </label> 
+								<label for = "SRomb2">$S = a^2 \cdot \sin(\alpha)$ </label> 
 								<output type = "text" name = "SRomb2" id = "SRomb2"> </output> <br>
 								<label for = "SRomb3"> $S = \frac{d_1 \cdot d_2}{2}$ </label>
 								<output type = "text" name = "SRomb3" id = "SRomb3"> </output> <br>
-
+								<div id="romb"></div>
 						</script>
 					</section>
 
@@ -451,6 +503,7 @@
 								<output type = "text" name = "PTrap" id = "PTrap"> </output> <br>
 								<label for = "STrap">$S =\dfrac {1}{2}\cdot(a+b)\cdot h$ </label>
 								<output type = "text" name = "STrap" id = "STrap"> </output> <br>
+							    <div id="trapez"></div> 
 						</script>
 					</section>
 
@@ -500,8 +553,8 @@
 						Найти: $ S.$ <br>
 						Решение:<br>
 						$S = \frac{d^2}{4} π. $ <br>
-						$S =\frac {d^2}{4} = \frac{4^2}{4} = 8.$<br>
-						Ответ: площадь круга равна $8.$
+						$S =\frac {d^2}{4} π = \frac{4^2}{4} π = 8π \approx 25.13 .$<br>
+						Ответ: площадь круга равна $25.13.$
 						</script>
 					</section>
 
@@ -549,8 +602,8 @@
 						Дано: $a = 4, b = 8, \alpha = 30^{\circ}. $
 						Найти: $S$. <br>
 						Решение: <br>
-						$S=\dfrac {1}{2}\cdot a \cdot b \cdot sin(\alpha)$.<br>
-						$S = \dfrac {1}{2} \cdot a \cdot b \cdot sin(\alpha) = \dfrac{1}{2} \cdot 4 \cdot 8 \cdot sin(30^{\circ})=$<br>
+						$S=\dfrac {1}{2}\cdot a \cdot b \cdot \sin(\alpha)$.<br>
+						$S = \dfrac {1}{2} \cdot a \cdot b \cdot sin(\alpha) = \dfrac{1}{2} \cdot 4 \cdot 8 \cdot \sin(30^{\circ})=$<br>
 						$=16 \cdot \dfrac {1}{2} = 8$.
 						</script>
 					</section>
@@ -595,8 +648,8 @@
 						Дано: $a = 9, b = 12, \alpha = 60^{\circ}$.
 						Найти: $S$.<br>
 						Решение:<br>
-						$S = a \cdot b \cdot sin(\alpha).$    
-						$S = a \cdot b \cdot sin(\alpha) = 9 \cdot 12 \cdot sin(60^{\circ}) \approx $  
+						$S = a \cdot b \cdot \sin(\alpha).$    
+						$S = a \cdot b \cdot \sin(\alpha) = 9 \cdot 12 \cdot \sin(60^{\circ}) \approx $  
 						$ \approx 93.53074.$
 
 						</script>
